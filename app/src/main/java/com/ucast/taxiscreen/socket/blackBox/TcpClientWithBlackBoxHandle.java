@@ -1,4 +1,4 @@
-package com.ucast.taxiscreen.socket.server;
+package com.ucast.taxiscreen.socket.blackBox;
 
 
 
@@ -14,7 +14,7 @@ import io.netty.util.ReferenceCountUtil;
 /**
  * Created by Administrator on 2016/2/4.
  */
-public class TcpClientWithServerHandle extends ChannelInboundHandlerAdapter {
+public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
     //用于存放打印返回信息
     private byte[] allBuffer;
     //用于监控fanBuffer的初始偏移量
@@ -23,7 +23,7 @@ public class TcpClientWithServerHandle extends ChannelInboundHandlerAdapter {
     private int cutPosition = 0;
     //设置存放消息数组的设定长度
     private int allBufferLen = 1024 * 8;
-    public TcpClientWithServerHandle() {
+    public TcpClientWithBlackBoxHandle() {
         allBuffer = new byte[allBufferLen];
     }
 

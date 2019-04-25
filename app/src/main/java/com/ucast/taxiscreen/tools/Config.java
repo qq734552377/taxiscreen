@@ -10,6 +10,9 @@ public class Config {
     public static int PORTBAUDRATE = 115200;
     public static String PORTPATHE = "";
 
+    public static String BLACKBOXCLIENTNAME = "to_black";
+    public static String SERVERCLIENTNAME = "to_server";
+
     public static boolean isHiddenBottom = false;
     public static String DBNAME = "ucast_shouyin";
     public static int ONELINEMONEYSHOWNUMBER = 20;
