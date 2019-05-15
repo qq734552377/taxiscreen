@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RooftopActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="24dp"
+            android:paddingTop="8dp"
+            >
+            <TextView
+                style="@style/title_tv_style"
+                android:text="@string/rooftop_test_str"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/show_hired_bt"
+                    android:text="@string/show_hired_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/show_taxi_bt"
+                    android:text="@string/show_taxi_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/show_oncall_bt"
+                    android:text="@string/show_oncall_str"
+                    style="@style/base_bt"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                >
+                <TextView
+                    style="@style/subtitle_str_tv_style"
+                    android:text="@string/free_text_str"
+                    />
+                <EditText
+                   android:id="@+id/free_text_et"
+                   style="@style/input_msg_et_style" />
+
+                <TextView
+                    style="@style/subtitle_str_tv_style"
+                    android:text="@string/free_color_str"
+                    android:layout_marginTop="24dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <RatingBar
+                                style="@style/star_rb"
+                                android:progressTint="@color/red"
+                                >
+                            </RatingBar>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <RatingBar
+                                style="@style/star_rb"
+                                android:progressTint="@color/orange"
+                                >
+                            </RatingBar>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <RatingBar
+                                style="@style/star_rb"
+                                android:progressTint="@color/green"
+                                >
+                            </RatingBar>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <RadioGroup
+                            android:id="@+id/select_color_rg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            >
+
+                            <RadioButton
+                                android:id="@+id/select_red_rb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="1"
+                                android:checked="true" />
+                            <RadioButton
+                                android:id="@+id/select_orange_rb"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                />
+                            <RadioButton
+                                android:id="@+id/select_green_rb"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/show_free_text_bt"
+                    android:text="@string/show_free_text_str"
+                    style="@style/base_bt"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    ></LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.WirelessTestActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="24dp"
+            android:paddingTop="8dp"
+            >
+
+            <TextView
+                style="@style/title_tv_style"
+                android:text="@string/wireless_test_str" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9"
+                    android:orientation="horizontal"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+                        <Button
+                            android:id="@+id/open_3g_bt"
+                            android:text="@string/open_3g_str"
+                            style="@style/base_bt"
+                            />
+                        <Button
+                            android:id="@+id/close_3g_bt"
+                            android:text="@string/close_3g_str"
+                            style="@style/base_bt"
+                            />
+
+                        <Button
+                            android:id="@+id/reset_3g_bt"
+                            android:text="@string/reset_3g_str"
+                            style="@style/base_bt"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <Button
+                            android:id="@+id/get_imsi_bt"
+                            android:text="@string/get_imsi_str"
+                            style="@style/base_bt"
+                            />
+
+                        <Button
+                            android:id="@+id/get_imei_bt"
+                            android:text="@string/get_imei_str"
+                            style="@style/base_bt"
+                            />
+
+                        <Button
+                            android:id="@+id/get_singal_bt"
+                            android:text="@string/get_signal_strength_str"
+                            style="@style/base_bt"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:orientation="horizontal"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingTop="8dp"
+                    >
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:orientation="vertical"
+                       >
+                       <TextView
+                           style="@style/subtitle_str_tv_style"
+                           android:text="@string/apn_str"
+                           />
+                       <EditText
+                           android:id="@+id/apn_et"
+                           style="@style/input_msg_et_style"
+                           />
+                       <Button
+                           android:id="@+id/apn_set_bt"
+                           style="@style/set_apn_bt_style"
+                           android:layout_marginTop="8dp"
+                           android:layout_marginRight="8dp"
+                           android:text="@string/set_it_str"
+                           />
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:orientation="vertical"
+                       ></LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        style="@style/subtitle_str_tv_style"
+                        android:text="@string/info_log_str"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/info_log_tv"
+                            style="@style/info_text_style" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

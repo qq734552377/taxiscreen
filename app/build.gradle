@@ -4,8 +4,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.ucast.taxiscreen"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion 23
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -40,4 +40,10 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.58.android'
     implementation 'pub.devrel:easypermissions:0.1.9'
 
+    implementation('com.github.hotchemi:permissionsdispatcher:3.1.0')
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.1.0'
+    implementation('com.github.hotchemi:permissionsdispatcher:3.1.0') {
+        exclude module: 'support-v13'
+    }
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.1.0'
 }

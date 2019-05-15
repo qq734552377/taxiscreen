@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/table_content_row_1"
+            style="@style/table_content_item"
+            android:text="128"
+            />
+    </LinearLayout>
+
+    <ImageView
+        style="@style/table_vertial_line"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/table_content_row_2"
+            style="@style/table_content_item"
+            android:text="@string/table_conten_item2_str"
+            />
+    </LinearLayout>
+
+    <ImageView
+        style="@style/table_vertial_line"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/table_content_row_3"
+            style="@style/table_content_item"
+            android:text="@string/table_conten_item3_str"
+            />
+    </LinearLayout>
+
+    <ImageView
+        style="@style/table_vertial_line"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/table_content_row_4"
+            style="@style/table_content_item"
+            android:text="@string/table_conten_item4_str"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

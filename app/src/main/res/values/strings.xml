@@ -1,3 +1,91 @@
 <resources>
     <string name="app_name">taxiscreen</string>
+
+    <string name="main_title">SMRT MDU POC</string>
+    <string name="meter_str">METER</string>
+    <string name="rooftop_str">ROOFTOP</string>
+    <string name="erp_str">ERP</string>
+    <string name="panic_str">PANIC</string>
+    <string name="gps_str">GPS &#038; IO</string>
+    <string name="wireless_str">WIRELESS</string>
+    <string name="keypad_str">KEYPAD</string>
+    <string name="other_str">OTHER</string>
+
+
+    <string name="taxi_str">TAXI</string>
+    <string name="amt_str">amt</string>
+    <string name="time_str">time</string>
+    <string name="latlon_str">Lat Lon</string>
+    <string name="netstatus_str">Net status</string>
+    <string name="meter_status_str">Meter status:</string>
+    <string name="erp_info_str">ERP infomation:</string>
+    <string name="wireless_gps_str">WIRLESS / GPS:</string>
+    <string name="table_conten_item2_str">May 1st\n18:28</string>
+    <string name="table_conten_item3_str">May 1st\n19:28</string>
+    <string name="table_conten_item4_str">$20.00</string>
+    <string name="table_conten_latlon_item_str">1.03415\n103.44889</string>
+    <string name="connect_str">Connected</string>
+
+    <string name="meter_test_str">METER TEST</string>
+    <string name="meter_enable">METER\nENABLE</string>
+    <string name="meter_disable">METER\nDISABLE</string>
+    <string name="current_status">CURRENT\nSTATUS</string>
+    <string name="add_surchare">ADD\nSURCHARE</string>
+    <string name="trip_head_item_1">TRIP ID</string>
+    <string name="trip_head_item_2">START TIME</string>
+    <string name="trip_head_item_3">END TIME</string>
+    <string name="trip_head_item_4">Total FARE</string>
+
+    <string name="erp_test_str">ERP TEST</string>
+    <string name="get_amt_str">GET AMT</string>
+    <string name="reset_amt_str">RESET TEST</string>
+    <string name="clear_table_str">Clear Table</string>
+    <string name="erp_surchaege_str">ERP Surcharge</string>
+    <string name="erp_time_str">ERP TIME</string>
+    <string name="record_list_str">Record list:</string>
+    <string name="erp_amount_str">ERP AMOUNT</string>
+
+    <string name="gps_io_test_str">GPS/IO TEST</string>
+    <string name="close_gps_str">CLOSE GPS</string>
+    <string name="open_gps_str">OPEN GPS</string>
+    <string name="reset_gps_str">RESET GPS</string>
+    <string name="last_gps_info_str">Last GPS info list:</string>
+    <string name="io_info_log_str">IO info Log:</string>
+    <string name="gps_time_str">GPS TIME（UTC)</string>
+
+    <string name="wireless_test_str">WIRELESS TEST</string>
+    <string name="open_3g_str">OPEN 3G</string>
+    <string name="close_3g_str">CLOSE 3G</string>
+    <string name="reset_3g_str">RESET 3G</string>
+    <string name="get_imsi_str">GET IMSI</string>
+    <string name="get_imei_str">GET IMEI</string>
+    <string name="get_signal_strength_str">GET Signal\nstrength</string>
+    <string name="apn_str">APN:</string>
+    <string name="set_it_str">SET IT!</string>
+    <string name="info_log_str">Info Log:</string>
+
+    <string name="keypad_test_str">KEYPAD TEST</string>
+    <string name="start_test_str">START TEST</string>
+    <string name="cancle_test_str">CANCLE TEST</string>
+    <string name="test_ok_str">Tested OK</string>
+    <string name="k1_str">K1</string>
+    <string name="k2_str">K2</string>
+    <string name="k3_str">K3</string>
+    <string name="k4_str">K4</string>
+    <string name="k5_str">K5</string>
+    <string name="k6_str">K6</string>
+
+    <string name="panic_button_test_str">PANIC Button TEST</string>
+    <string name="reset_str">RESET</string>
+    <string name="clicked_info_list_str">Clicked info list:</string>
+    <string name="clicked_time_str">Clicked TIME</string>
+    
+    <string name="rooftop_test_str">ROOFTOP TEST</string>
+    <string name="show_hired_str">SHOW\nHIRED</string>
+    <string name="show_taxi_str">SHOW\nTAXI</string>
+    <string name="show_oncall_str">SHOW\nONCALL</string>
+    <string name="show_free_text_str">SHOW\nFree Text</string>
+    <string name="free_text_str">FREE TEXT: (max 32 chars)</string>
+    <string name="free_color_str">FREE COLOR</string>
+    <string name="select_str">select</string>
 </resources>

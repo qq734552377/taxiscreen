@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.ErpTestActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="24dp"
+            android:paddingTop="8dp"
+            >
+            <TextView
+                style="@style/title_tv_style"
+                android:text="@string/erp_test_str"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    style="@style/big_horizental_line" />
+                <Button
+                    android:id="@+id/get_amt_bt"
+                    android:text="@string/get_amt_str"
+                    style="@style/base_bt"
+                    />
+                <ImageView
+                    style="@style/big_horizental_line" />
+                <Button
+                    android:id="@+id/reset_amt_bt"
+                    android:text="@string/reset_amt_str"
+                    style="@style/base_bt"
+                    />
+                <ImageView
+                    style="@style/big_horizental_line" />
+                <Button
+                    android:id="@+id/clear_table_bt"
+                    android:text="@string/clear_table_str"
+                    style="@style/base_bt"
+                    />
+                <ImageView
+                    style="@style/big_horizental_line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:visibility="gone"
+                        style="@style/subtitle_str_tv_style"
+                        android:text="@string/meter_status_str"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                style="@style/table_head_item"
+                                android:background="@color/orange"
+                                android:text="@string/erp_amount_str"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                android:id="@+id/erp_amout_tv"
+                                style="@style/table_head_item"
+                                android:background="@color/baseBtColor"
+                                android:text="$30.00"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        style="@style/subtitle_str_tv_style"
+                        android:text="@string/record_list_str"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+                        <include layout="@layout/erp_head_list_item"></include>
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/erp_recucleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

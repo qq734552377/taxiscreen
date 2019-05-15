@@ -6,13 +6,312 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="24dp"
+            android:paddingTop="8dp"
+            >
+            <TextView
+                style="@style/title_tv_style"
+                android:text="@string/main_title"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/meter_bt"
+                    android:text="@string/meter_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/erp_bt"
+                    android:text="@string/erp_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/gps_bt"
+                    android:text="@string/gps_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/keypad_bt"
+                    android:text="@string/keypad_str"
+                    style="@style/base_bt"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/rooftop_bt"
+                    android:text="@string/rooftop_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/panic_bt"
+                    android:text="@string/panic_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/wireless_bt"
+                    android:text="@string/wireless_str"
+                    style="@style/base_bt"
+                    />
+                <Button
+                    android:id="@+id/other_bt"
+                    android:text="@string/other_str"
+                    style="@style/base_bt"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        style="@style/subtitle_str_tv_style"
+                        android:text="@string/meter_status_str"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                android:id="@+id/meter_status_tv"
+                                style="@style/table_head_item"
+                                android:background="@color/green"
+                                android:text="@string/taxi_str"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        style="@style/subtitle_str_tv_style"
+                        android:text="@string/erp_info_str"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                style="@style/table_head_item"
+                                android:background="@color/orange"
+                                android:text="@string/amt_str"
+                                />
+                        </LinearLayout>
+                        <ImageView
+                            style="@style/table_vertial_line"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                style="@style/table_head_item"
+                                android:background="@color/green"
+                                android:text="@string/time_str"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <ImageView
+                        style="@style/table_horizental_line" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                android:id="@+id/amt_tv"
+                                style="@style/table_content_item"
+                                android:text="@string/table_conten_item4_str"
+                                />
+                        </LinearLayout>
+                        <ImageView
+                            style="@style/table_vertial_line"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                android:id="@+id/time_tv"
+                                style="@style/table_content_item"
+                                android:text="@string/table_conten_item2_str"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    >
+                    <TextView
+                        style="@style/subtitle_str_tv_style"
+                        android:text="@string/wireless_gps_str"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                style="@style/table_head_item"
+                                android:background="@color/orange"
+                                android:text="@string/latlon_str"
+                                />
+                        </LinearLayout>
+                        <ImageView
+                            style="@style/table_vertial_line"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+                            <TextView
+                                style="@style/table_head_item"
+                                android:background="@color/green"
+                                android:text="@string/netstatus_str"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <ImageView
+                        style="@style/table_horizental_line" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+
+                            <TextView
+                                android:id="@+id/latlon_tv"
+                                style="@style/table_content_item"
+                                android:text="@string/table_conten_latlon_item_str" />
+                        </LinearLayout>
+                        <ImageView
+                            style="@style/table_vertial_line"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+
+                            <TextView
+                                android:id="@+id/netstaus_tv"
+                                style="@style/table_content_item"
+                                android:text="@string/connect_str" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

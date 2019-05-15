@@ -3,4 +3,16 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="baseBtColor">#4472C4</color>
+    <color name="baseBtPressedColor">#5588DF</color>
+    <color name="titleColor">#FF0909</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#ED7D31</color>
+    <color name="green">#70AD47</color>
+    <color name="greendark">#007050</color>
+    <color name="textBackgroundColor">#B4C7E7</color>
+
+
 </resources>
