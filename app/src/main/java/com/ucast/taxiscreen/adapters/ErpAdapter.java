@@ -59,12 +59,12 @@ public class ErpAdapter extends RecyclerView.Adapter {
         }
 
         public void setContentBackgroupGreen(){
-            conten_item_1.setBackgroundColor(itemView.getContext().getColor(R.color.greendark));
-            conten_item_2.setBackgroundColor(itemView.getContext().getColor(R.color.greendark));
+            conten_item_1.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.greendark));
+            conten_item_2.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.greendark));
         }
         public void setContentBackgroupBlue(){
-            conten_item_1.setBackgroundColor(itemView.getContext().getColor(R.color.baseBtColor));
-            conten_item_2.setBackgroundColor(itemView.getContext().getColor(R.color.baseBtColor));
+            conten_item_1.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.baseBtColor));
+            conten_item_2.setBackgroundColor(itemView.getContext().getResources().getColor(R.color.baseBtColor));
         }
     }
 

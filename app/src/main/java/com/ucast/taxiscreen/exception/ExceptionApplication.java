@@ -22,7 +22,7 @@ public class ExceptionApplication extends Application {
 
     public void onCreate() {
         super.onCreate();
-        x.Ext.init(this);
+//        x.Ext.init(this);
         simsunTypeface = Typeface.createFromAsset(getAssets(),"simsun.ttc");
         context=this;
 

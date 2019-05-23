@@ -8,20 +8,26 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 
+import com.ucast.taxiscreen.BasePermisionActivity;
 import com.ucast.taxiscreen.R;
 import com.ucast.taxiscreen.adapters.TripAdapter;
 import com.ucast.taxiscreen.enties.TripShowObj;
 
 import java.util.ArrayList;
 
-public class MeterTestActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class MeterTestActivity extends BasePermisionActivity {
     ArrayList<TripShowObj> datas = new ArrayList<>();
+    @BindView(R.id.trip_recucleview)
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meter_test);
         getSupportActionBar().hide();
+        ButterKnife.bind(this);
         for (int i = 0; i < 3; i++) {
             TripShowObj one = new TripShowObj();
             one.setTripId("0" + (i+1) +"");
@@ -30,7 +36,6 @@ public class MeterTestActivity extends AppCompatActivity {
             one.setTotalFare("$" + (i+2)*5 + ".00");
             datas.add(one);
         }
-        recyclerView = findViewById(R.id.trip_recucleview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this );
         //设置布局管理器
         recyclerView.setLayoutManager(layoutManager);

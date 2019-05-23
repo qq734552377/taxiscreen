@@ -5,20 +5,25 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
+import com.ucast.taxiscreen.BasePermisionActivity;
 import com.ucast.taxiscreen.R;
 
-public class WirelessTestActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class WirelessTestActivity extends BasePermisionActivity {
+    @BindView(R.id.info_log_tv)
     TextView info_log_tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wireless_test);
         getSupportActionBar().hide();
+        ButterKnife.bind(this);
         initViews();
     }
 
     private void initViews() {
-        info_log_tv = findViewById(R.id.info_log_tv);
         info_log_tv.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 

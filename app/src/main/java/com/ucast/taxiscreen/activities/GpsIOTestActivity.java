@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.ucast.taxiscreen.BasePermisionActivity;
 import com.ucast.taxiscreen.R;
 import com.ucast.taxiscreen.adapters.ErpAdapter;
 import com.ucast.taxiscreen.adapters.GpsAdapter;
@@ -20,29 +21,33 @@ import com.ucast.taxiscreen.enties.GpsShowObj;
 
 import java.util.ArrayList;
 
-public class GpsIOTestActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class GpsIOTestActivity extends BasePermisionActivity {
+    @BindView(R.id.io_info_tv)
     TextView io_info_tv;
+    @BindView(R.id.open_gps_bt)
     Button open_gps_bt;
+    @BindView(R.id.close_gps_bt)
     Button close_gps_bt;
+    @BindView(R.id.reset_gps_bt)
     Button reset_gps_bt;
     ArrayList<GpsShowObj> datas = new ArrayList<>();
+    @BindView(R.id.gps_recucleview)
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps_iotest);
         getSupportActionBar().hide();
+        ButterKnife.bind(this);
         initViews();
     }
 
     private void initViews() {
-        io_info_tv = findViewById(R.id.io_info_tv);
         io_info_tv.setMovementMethod(ScrollingMovementMethod.getInstance());
 
-        open_gps_bt = findViewById(R.id.open_gps_bt);
-        close_gps_bt = findViewById(R.id.close_gps_bt);
-        reset_gps_bt = findViewById(R.id.reset_gps_bt);
-        recyclerView = findViewById(R.id.gps_recucleview);
         for (int i = 0; i < 13; i++) {
             GpsShowObj one = new GpsShowObj();
             one.setLatlon("101.200\n105.265");

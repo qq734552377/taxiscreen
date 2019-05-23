@@ -19,24 +19,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.RooftopActivity"
-            android:windowSoftInputMode="stateHidden"
-            ></activity>
-        <activity android:name=".activities.PanicTestActivity" />
-        <activity android:name=".activities.KeybordTestActivity" />
+
         <activity
-            android:name=".activities.WirelessTestActivity"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".activities.GpsIOTestActivity" />
-        <activity android:name=".activities.ErpTestActivity" />
-        <activity android:name=".activities.MeterTestActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".SplashActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.RooftopActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.PanicTestActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.KeybordTestActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.WirelessTestActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.GpsIOTestActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.ErpTestActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.MeterTestActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

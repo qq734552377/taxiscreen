@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 
+import com.ucast.taxiscreen.BasePermisionActivity;
 import com.ucast.taxiscreen.R;
 import com.ucast.taxiscreen.adapters.ClickedTimeAdapter;
 import com.ucast.taxiscreen.adapters.ErpAdapter;
@@ -16,19 +17,23 @@ import com.ucast.taxiscreen.enties.GpsShowObj;
 
 import java.util.ArrayList;
 
-public class PanicTestActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class PanicTestActivity extends BasePermisionActivity {
     ArrayList<ClickedTimeShowObj> datas = new ArrayList<>();
+    @BindView(R.id.clicked_time_recucleview)
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panic_test);
         getSupportActionBar().hide();
+        ButterKnife.bind(this);
         initViews();
     }
 
     private void initViews() {
-        recyclerView = findViewById(R.id.clicked_time_recucleview);
         for (int i = 0; i < 13; i++) {
             ClickedTimeShowObj one = new ClickedTimeShowObj();
             one.setClickedTime("May " + (i+1)+ " 18:28");
