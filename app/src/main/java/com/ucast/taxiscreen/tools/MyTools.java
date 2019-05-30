@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.provider.Settings;
+import android.util.Base64;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -32,7 +33,36 @@ public class MyTools {
     public static final String WORK_STATE ="work_state";
     public static final String OVERTIME_ID ="overtime_id";
 
+    public static String encode(byte[] bstr) {
+        return Base64.encodeToString(bstr, Base64.DEFAULT).replace("\n","");
+    }
 
+
+    /**
+     * 解码
+     *
+     * @param str
+     * @return string
+     */
+    public static byte[] decode(String str) {
+        try {
+            return Base64.decode(str, Base64.DEFAULT);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    /**
+     * 解码
+     *
+     * @param str
+     * @return string
+     */
+    public static String decodeReturnStr(String str) {
+        byte[] res  = decode(str);
+        if (res == null)
+            return "";
+        return new String(res);
+    }
 
     public static Date stringToDate(String s) {
         Date time = null;
@@ -45,7 +75,10 @@ public class MyTools {
         }
         return time;
     }
-
+    public static String get3DigitNum(int src){
+        String result = String.format("%03d",src);
+        return result;
+    }
 
     public static long getIntToMillis(String str) {
         String str_date = str + " " + "00:00:00";

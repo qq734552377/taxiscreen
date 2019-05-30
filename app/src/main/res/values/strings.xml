@@ -88,4 +88,14 @@
     <string name="free_text_str">FREE TEXT: (max 32 chars)</string>
     <string name="free_color_str">FREE COLOR</string>
     <string name="select_str">select</string>
+
+    <string name="rooftop_red_color">1</string>
+    <string name="rooftop_orange_color">2</string>
+    <string name="rooftop_green_color">0</string>
+    <string name="show_rooftop_hired">1</string>
+    <string name="show_rooftop_taxi">0</string>
+    <string name="show_rooftop_oncall">2</string>
+    <string name="show_rooftop_busy">3</string>
+
+
 </resources>

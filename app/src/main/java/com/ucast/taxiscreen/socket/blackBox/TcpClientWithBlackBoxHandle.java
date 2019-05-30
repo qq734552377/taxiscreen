@@ -2,6 +2,9 @@ package com.ucast.taxiscreen.socket.blackBox;
 
 
 
+import com.ucast.taxiscreen.socket.entities.MCUSendCmd;
+import com.ucast.taxiscreen.socket.entities.SendToBlackMsg;
+import com.ucast.taxiscreen.socket.queue.SendToBlackBoxMsgQueuemanager;
 import com.ucast.taxiscreen.tools.MyTools;
 
 import io.netty.buffer.ByteBuf;
@@ -64,6 +67,23 @@ public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
         jointBuffer(buffer);
 //        MyTools.writeSimpleLogWithTime(MyTools.printHexString(buffer));
         while (offSet > 0) {
+            int index = getIndexByByte((byte) 0x06);
+            if (index == 0){
+                MyTools.writeSimpleLogWithTime("移掉一条消息");
+                SendToBlackBoxMsgQueuemanager.getInstance().getOneQueue(0).removeItem();
+                cutPosition = index + 1;
+                cutBuffer();
+                continue;
+            }
+            index = getIndexByByte((byte) 0x15);
+            if (index == 0){
+                MyTools.writeSimpleLogWithTime("将一条消息变为重新发送状态");
+                SendToBlackBoxMsgQueuemanager.getInstance().getOneQueue(0).changeSendStateItem();
+                cutPosition = index + 1;
+                cutBuffer();
+                continue;
+            }
+
             int startIndex = getIndexByByte((byte) 0x02);
             if (startIndex <= -1) {
                 break;
@@ -85,8 +105,24 @@ public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
 
     private void handleProtocol(byte[] printBuffer) {
         //TODO 处理协议
+        String str = new String (printBuffer);
+        String cmd = str.substring(0,3);
+        String dataLen = str.substring(3,6);
+        String data = "";
+        if (Integer.parseInt(dataLen) != 0){
+            data = MyTools.decodeReturnStr(str.substring(6,str.length()));
+        }
+        SendToBlackMsg msg = new SendToBlackMsg();
+        msg.setSendCmd(cmd);
+        msg.setSendLength(dataLen);
+        msg.setSendContent(data);
+        switch (msg.getSendCmd()){
+            case "MSB":
+
+                break;
 
 
+        }
 
     }
 

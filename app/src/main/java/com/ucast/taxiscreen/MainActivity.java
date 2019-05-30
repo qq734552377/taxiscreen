@@ -22,6 +22,8 @@ import com.ucast.taxiscreen.exception.CrashHandler;
 import com.ucast.taxiscreen.exception.ExceptionApplication;
 import com.ucast.taxiscreen.exception.LogUtil;
 import com.ucast.taxiscreen.tools.MyDialog;
+import com.ucast.taxiscreen.tools.SavePasswd;
+import com.ucast.taxiscreen.tools.ToastUtil;
 
 import org.apache.log4j.Logger;
 
@@ -30,6 +32,8 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -49,30 +53,46 @@ public class MainActivity extends BasePermisionActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         ButterKnife.bind(this);
-
-      disposable = Observable.just("tom","jerry","sam")
-                .subscribeOn(Schedulers.io())
-                .doOnNext(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Log.e("doOnNext", "accept: " + s );
-                    }
-                }).map(new Function<String, String>() {
-
-                    @Override
-                    public String apply(String s) throws Exception {
-                        Thread.sleep(8000);
-                        return s + "223";
-                    }
-                })
-               .observeOn(AndroidSchedulers.mainThread())
-               .subscribe(new Consumer<String>() {
-                   @Override
-                   public void accept(String s) throws Exception {
-                       MyDialog.showToast(MainActivity.this,s);
-                   }
-               });
-
+        Intent ootStartIntent = new Intent(this, UpdateService.class);
+        ootStartIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startService(ootStartIntent);
+//      disposable = Observable.just("tom","jerry","sam")
+//                .subscribeOn(Schedulers.io())
+//                .doOnNext(new Consumer<String>() {
+//                    @Override
+//                    public void accept(String s) throws Exception {
+//                        Log.e("doOnNext", "accept: " + s );
+//                    }
+//                }).map(new Function<String, String>() {
+//
+//                    @Override
+//                    public String apply(String s) throws Exception {
+//                        Thread.sleep(8000);
+//                        return s + "223";
+//                    }
+//                })
+//               .observeOn(AndroidSchedulers.mainThread())
+//               .subscribe(new Consumer<String>() {
+//                   @Override
+//                   public void accept(String s) throws Exception {
+//                       MyDialog.showToast(MainActivity.this,s);
+//                   }
+//               });
+//        disposable = Observable.create(new ObservableOnSubscribe<String>() {
+//            @Override
+//            public void subscribe(ObservableEmitter<String> e) throws Exception {
+//                e.onNext(SavePasswd.getInstace().get(SavePasswd.ROOFTOPCOLOR));
+//                e.onComplete();
+//            }
+//        })
+//        .subscribeOn(Schedulers.io())
+//        .observeOn(AndroidSchedulers.mainThread())
+//        .subscribe(new Consumer<String>() {
+//            @Override
+//            public void accept(String s) throws Exception {
+//                MyDialog.showToast(MainActivity.this,s);
+//            }
+//        });
 
     }
     @OnClick(R.id.meter_bt)

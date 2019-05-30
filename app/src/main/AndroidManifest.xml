@@ -22,7 +22,6 @@
 
         <activity
             android:name=".SplashActivity"
-            android:launchMode="singleInstance"
             android:screenOrientation="landscape"
             android:theme="@style/SplashActivity">
             <intent-filter>
@@ -56,8 +55,12 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleInstance"
             android:screenOrientation="landscape"></activity>
+        <service
+            android:name=".UpdateService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

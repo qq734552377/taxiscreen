@@ -82,7 +82,7 @@ public class NioTcpClient implements Runnable {
                     ChannelFuture futureListener = (ChannelFuture) future;
                     final EventLoop eventLoop = futureListener.channel().eventLoop();
                     if (!futureListener.isSuccess()) {
-                        MyTools.writeSimpleLogWithTime(name + "-->  Failed to connect to server:" + ip + ":" + port + ", try connect after " + NioTcpClient.reConnectTime + "s");
+                        MyTools.writeSimpleLogWithTime(name + "-->  Failed to connect to server:" + ip + ":" + port + ", try connect again after " + NioTcpClient.reConnectTime + "s");
                         futureListener.channel().eventLoop().schedule(new Runnable() {
                             @Override
                             public void run() {
@@ -93,6 +93,7 @@ public class NioTcpClient implements Runnable {
                 }
             });
             try {
+                MyTools.writeSimpleLogWithTime(this.name + " 连接成功");
                 f.channel().closeFuture().sync();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -101,9 +102,9 @@ public class NioTcpClient implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MyTools.writeSimpleLogWithTime(this.name + " connect 抛出" + e.toString());
+            close();
         } finally {
 
-//            close();
         }
     }
 

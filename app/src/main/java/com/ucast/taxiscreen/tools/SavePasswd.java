@@ -41,6 +41,7 @@ public class SavePasswd {
     public final static String EMPLOYEENAME = "employeeName";
     public final static String STOREID = "storeID";
     public final static String STORENAME = "storeName";
+    public final static String ROOFTOPCOLOR = "rooftopcolor";
 
 
     private static String[] xmlKeys = {ISOPENPRINT,ISAUTOMONEYBOX,ISNETPRINTUPLOADTOSERVICE,BMPUPLOADHOST,HEARTBEATHOST};

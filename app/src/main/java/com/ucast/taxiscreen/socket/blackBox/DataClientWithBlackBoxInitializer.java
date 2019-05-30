@@ -17,6 +17,9 @@ import io.netty.handler.timeout.IdleStateHandler;
 public class DataClientWithBlackBoxInitializer extends ChannelInitializer {
     NioTcpClient client;
 
+    public DataClientWithBlackBoxInitializer() {
+    }
+
     public DataClientWithBlackBoxInitializer(NioTcpClient client) {
         this.client = client;
     }
@@ -24,7 +27,8 @@ public class DataClientWithBlackBoxInitializer extends ChannelInitializer {
     public void initChannel(Channel channel) {
         TcpClientWithBlackBoxHandle handle = new TcpClientWithBlackBoxHandle();
         channel.pipeline().addLast("idleStateHandler", new IdleStateHandler(NioTcpClient.readTimeout, NioTcpClient.writeTimeout,NioTcpClient.allTimeout, TimeUnit.SECONDS));
-        channel.pipeline().addLast("idleTimeoutHandler", new TImeoutIdleClientHandler(this.client));
+        if (this.client != null)
+            channel.pipeline().addLast("idleTimeoutHandler", new TImeoutIdleClientHandler(this.client));
         channel.pipeline().addLast("handler", handle);
     }
 

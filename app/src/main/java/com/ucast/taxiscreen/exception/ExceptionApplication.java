@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
 
+import com.squareup.leakcanary.LeakCanary;
+
 import org.apache.log4j.Logger;
 import org.xutils.x;
 
@@ -32,7 +34,10 @@ public class ExceptionApplication extends Application {
 //        gLogger= Logger.getLogger(ExceptionApplication.class);
 //        //输出MyApplication的信息
 //        gLogger.info("Log4j Is Ready and ShouYin Application Was Started Successfully! ");
-
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
 
     }
     public static Context getInstance(){
