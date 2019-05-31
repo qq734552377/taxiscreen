@@ -13,7 +13,7 @@ public class SendToBlackMsg {
 
 
     public SendToBlackMsg() {
-        setSendCmd(MDUSendCmd.QueryMeterTime);
+        setSendCmd(MDUSendCmd.HEARTBEAT);
         setSendLength("000");
         setSendContent("");
     }
@@ -64,5 +64,15 @@ public class SendToBlackMsg {
         System.arraycopy(msgBytes,0,sendMsgs,1,msgBytes.length);
         sendMsgs[sendMsgs.length - 1] = 0x03;
         return sendMsgs;
+    }
+
+    @Override
+    public String toString() {
+        return "SendToBlackMsg{" +
+                "isSending=" + isSending +
+                ", sendCmd='" + sendCmd + '\'' +
+                ", sendLength='" + sendLength + '\'' +
+                ", sendContent='" + sendContent + '\'' +
+                '}';
     }
 }

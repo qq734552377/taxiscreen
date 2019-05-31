@@ -45,7 +45,6 @@ public class BlackBoxClientConnect {
                     } else {
                         boolean result = sendHeartBeat();
                         if (result) {
-                            heartbeatTimeUpdate();
                             return;
                         }
                     }
@@ -61,6 +60,12 @@ public class BlackBoxClientConnect {
 
     public static boolean sendHeartBeat(){
         return SendTools.sendToBlackBox(Config.heartMsg);
+    }
+
+    public static void heartbeatSafeTimeUpdate(){
+        synchronized (lock){
+            heartbeatTimeUpdate();
+        }
     }
 
     public static void heartbeatTimeUpdate() {

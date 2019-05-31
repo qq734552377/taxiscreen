@@ -2,10 +2,14 @@ package com.ucast.taxiscreen.socket.blackBox;
 
 
 
+import com.ucast.taxiscreen.events.ERPMountEvent;
+import com.ucast.taxiscreen.socket.client_connect.BlackBoxClientConnect;
 import com.ucast.taxiscreen.socket.entities.MCUSendCmd;
 import com.ucast.taxiscreen.socket.entities.SendToBlackMsg;
 import com.ucast.taxiscreen.socket.queue.SendToBlackBoxMsgQueuemanager;
 import com.ucast.taxiscreen.tools.MyTools;
+
+import org.greenrobot.eventbus.EventBus;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -69,7 +73,7 @@ public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
         while (offSet > 0) {
             int index = getIndexByByte((byte) 0x06);
             if (index == 0){
-                MyTools.writeSimpleLogWithTime("移掉一条消息");
+                MyTools.writeSimpleLog("移掉一条消息");
                 SendToBlackBoxMsgQueuemanager.getInstance().getOneQueue(0).removeItem();
                 cutPosition = index + 1;
                 cutBuffer();
@@ -77,7 +81,7 @@ public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
             }
             index = getIndexByByte((byte) 0x15);
             if (index == 0){
-                MyTools.writeSimpleLogWithTime("将一条消息变为重新发送状态");
+                MyTools.writeSimpleLog("将一条消息变为重新发送状态");
                 SendToBlackBoxMsgQueuemanager.getInstance().getOneQueue(0).changeSendStateItem();
                 cutPosition = index + 1;
                 cutBuffer();
@@ -104,6 +108,7 @@ public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
     }
 
     private void handleProtocol(byte[] printBuffer) {
+        BlackBoxClientConnect.heartbeatSafeTimeUpdate();
         //TODO 处理协议
         String str = new String (printBuffer);
         String cmd = str.substring(0,3);
@@ -120,7 +125,10 @@ public class TcpClientWithBlackBoxHandle extends ChannelInboundHandlerAdapter {
             case "MSB":
 
                 break;
-
+            case "ERA":
+                MyTools.writeSimpleLog(msg.toString());
+                EventBus.getDefault().postSticky(new ERPMountEvent(msg.getSendContent()));
+                break;
 
         }
 
